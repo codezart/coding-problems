@@ -1,3 +1,5 @@
+package Arrays.ArrayManipulation;
+
 import java.io.*;
 import java.math.*;
 import java.security.*;
@@ -6,19 +8,19 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+public class ArrayManipulationClass {
 
     // Complete the arrayManipulation function below.
-    static long arrayManipulation(int n, int[][] queries) {
+    static long arrayManipulation(int n, int[][] queries)  {
         // Define and put 0 as values
-        int[] a = new int[n];
+        long[] a = new long[n];
 
         int num_of_operations = queries.length;
 
         //main code
         int first_index;
         int last_index;
-        int summand;
+        long summand;
         int k;
         for(int i=0;i<num_of_operations; ++i){
 
@@ -27,10 +29,11 @@ public class Solution {
             summand = queries[i][2];
 
             k = first_index;
-            while(k <= last_index){
+            while(k < last_index){
                 a[k] += summand;
                 k++;
             }
+
         }
 
         Arrays.sort(a);
